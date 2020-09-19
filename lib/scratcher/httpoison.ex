@@ -47,5 +47,5 @@ defmodule Scratcher.HTTPoison do
        do: {:ok, %{status_code: status_code, headers: headers, body: body}}
 
   defp parse_response({:error, %HTTPoison.Error{reason: reason}}), do: {:error, %{reason: reason}}
-  defp parse_response(error), do: {:error, %{reason: nil}}
+  defp parse_response(_error), do: {:error, %{reason: nil}}
 end
